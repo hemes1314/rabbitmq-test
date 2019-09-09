@@ -21,11 +21,11 @@ public class RabbitmqProducerService {
     RabbitTemplate.ConfirmCallback confirmCallback = new RabbitTemplate.ConfirmCallback() {
         @Override
         public void confirm(CorrelationData correlationData, boolean isAck, String cause) {
-            System.out.println("=======ConfirmCallback=========");
-            System.out.println("correlationData = " + correlationData);
+//            System.out.println("=======ConfirmCallback=========");
+//            System.out.println("correlationData = " + correlationData);
             System.out.println("ack = " + isAck);
-            System.out.println("cause = " + cause);
-            System.out.println("=======ConfirmCallback=========");
+//            System.out.println("cause = " + cause);
+//            System.out.println("=======ConfirmCallback=========");
         }
     };
 

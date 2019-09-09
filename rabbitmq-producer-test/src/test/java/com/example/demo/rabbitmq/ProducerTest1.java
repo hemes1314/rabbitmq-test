@@ -27,8 +27,8 @@ public class ProducerTest1 {
     public void test() throws InterruptedException {
         System.out.println(">>>>>>>>>>>>>>>>>>>>>"+profileName);
         while (true) {
-            rabbitmqProducerService.sendMsg("node1->msg_test_msg_"+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(new Date()));
-            Thread.sleep(3000);
+            rabbitmqProducerService.sendMsg(profileName+"->msg_test_msg_"+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(new Date()));
+            Thread.sleep(1000);
         }
     }
 
