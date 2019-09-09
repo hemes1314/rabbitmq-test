@@ -28,7 +28,7 @@ public class ProducerTest0 {
         System.out.println(">>>>>>>>>>>>>>>>>>>>>"+profileName);
         while (true) {
             rabbitmqProducerService.sendMsg("node0->msg_test_msg_"+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(new Date()));
-            Thread.sleep(1000);
+            Thread.sleep(3000);
         }
     }
 

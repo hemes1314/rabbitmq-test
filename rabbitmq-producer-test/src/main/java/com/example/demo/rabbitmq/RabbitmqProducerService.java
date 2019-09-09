@@ -3,6 +3,7 @@ package com.example.demo.rabbitmq;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.support.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -10,6 +11,9 @@ import java.util.Date;
 
 @Service
 public class RabbitmqProducerService {
+
+    @Value("${profile_name}")
+    private String profileName;
 
     @Resource
     private RabbitTemplate rabbitTemplate;
@@ -42,6 +46,7 @@ public class RabbitmqProducerService {
         rabbitTemplate.setConfirmCallback(confirmCallback);
         rabbitTemplate.setReturnCallback(returnCallback);
         rabbitTemplate.convertAndSend(RabbitMQConfig.queue_test_01, msg);
+        System.out.println(profileName+" publish msg : "+ msg);
     }
 
 }
