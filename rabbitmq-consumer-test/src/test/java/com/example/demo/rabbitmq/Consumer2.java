@@ -15,7 +15,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class Consumer2 {
 
     @Test
-    public void test() {
-
+    public void test() throws InterruptedException {
+        while (true) {
+            Thread.sleep(1000);
+        }
     }
 }

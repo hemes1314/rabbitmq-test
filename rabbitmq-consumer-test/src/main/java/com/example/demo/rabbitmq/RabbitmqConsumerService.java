@@ -13,7 +13,7 @@ public class RabbitmqConsumerService {
     private String profileName;
 
     @RabbitHandler
-    public void process(String msg) {
+    public void process(String msg) throws InterruptedException {
         System.out.println(profileName+" receive msg : " + msg);
     }
 }
